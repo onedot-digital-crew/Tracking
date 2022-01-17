@@ -1,8 +1,8 @@
 {
-    "name": "OD Tracking",
+    "name": "ODTracking",
     "marketplaceName": {
-        "de": "Google Tag Manager Tracking ENTERPRISE - Forked",
-        "en": "Google Tag Manager Tracking ENTERPRISE - Forked"
+        "de": "Google Tag Manager Tracking ENTERPRISE Forked",
+        "en": "Google Tag Manager Tracking ENTERPRISE Forked"
     },
     "namespace": "Tracking",
     "isClosedSource": false,
