@@ -1854,8 +1854,15 @@ const NEWSLETTER_OPT_IN         = "newsletter-opt-in";
 			{% if alwaysEnableTracking %}
             	{% set data = _context.data %} {# is it good to take order data from _context? #}
 			{% else %}
-            	{% set data = services.customer.getLatestOrder() %}
+				{% if data is null %}
+					{% set data = services.customer.getLatestOrder() %}
+					{% if data is null %}
+						{% set data = _context.data %}
+					{% endif %}
+				{% endif %}
 			{% endif %}
+
+			{% if debugTracking %} <script>console.log('used data is: (next log line)');console.log({{ data|json_encode|raw }});</script> {% endif %}
 
 			{% if data is defined %}
 
