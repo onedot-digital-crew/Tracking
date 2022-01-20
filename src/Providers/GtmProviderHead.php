@@ -8,6 +8,6 @@ class GtmProviderHead
 {
     public function call(Twig $twig)
     {
-        return $twig->render('ODODTracking::GtmHead');
+        return $twig->render('ODTracking::GtmHead');
     }
 }
