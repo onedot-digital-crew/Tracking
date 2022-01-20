@@ -8,6 +8,6 @@ class GoogleSiteVerification
 {
     public function call(Twig $twig)
     {
-        return $twig->render('Tracking::GoogleSiteVerification');
+        return $twig->render('ODTracking::GoogleSiteVerification');
     }
 }

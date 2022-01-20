@@ -33,350 +33,350 @@ class TrackingServiceProvider extends ServiceProvider
 
         $consentRepository->registerConsentGroup(
             'other',
-            'Tracking::CookieConsent.consentGroupOtherLabel',
+            'ODTracking::CookieConsent.consentGroupOtherLabel',
             [
                 'position' => 300,
-                'description' => 'Tracking::CookieConsent.consentGroupOtherDescription'
+                'description' => 'ODTracking::CookieConsent.consentGroupOtherDescription'
             ]
         );
 
-        if ($config->get('Tracking.showProductList') === 'true') {
+        if ($config->get('ODTracking.showProductList') === 'true') {
             $consentRepository->registerConsent(
                 'gtmProductList',
-                'Tracking::CookieConsent.consentProductListLabel',
+                'ODTracking::CookieConsent.consentProductListLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentProductListDescription',
-                    'provider' => 'Tracking::CookieConsent.consentProductListProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentProductListLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentProductListPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupProductList', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentProductListNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentProductListIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentProductListCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentProductListDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentProductListProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentProductListLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentProductListPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupProductList', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentProductListNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentProductListIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentProductListCookieNames')))
 
                 ]
             );
         }
 
-        if ($config->get('Tracking.showGoogleAnalytics') === 'true') {
+        if ($config->get('ODTracking.showGoogleAnalytics') === 'true') {
             $consentRepository->registerConsent(
                 'gtmGoogleAnalytics',
-                'Tracking::CookieConsent.consentGoogleAnalyticsLabel',
+                'ODTracking::CookieConsent.consentGoogleAnalyticsLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentGoogleAnalyticsDescription',
-                    'provider' => 'Tracking::CookieConsent.consentGoogleAnalyticsProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentGoogleAnalyticsLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentGoogleAnalyticsPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupGoogleAnalytics', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentGoogleAnalyticsNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentGoogleAnalyticsIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentGoogleAnalyticsCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentGoogleAnalyticsDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentGoogleAnalyticsProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentGoogleAnalyticsLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentGoogleAnalyticsPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupGoogleAnalytics', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentGoogleAnalyticsNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentGoogleAnalyticsIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentGoogleAnalyticsCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showGoogleAds') === 'true') {
+        if ($config->get('ODTracking.showGoogleAds') === 'true') {
             $consentRepository->registerConsent(
                 'gtmGoogleAds',
-                'Tracking::CookieConsent.consentGoogleAdsLabel',
+                'ODTracking::CookieConsent.consentGoogleAdsLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentGoogleAdsDescription',
-                    'provider' => 'Tracking::CookieConsent.consentGoogleAdsProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentGoogleAdsLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentGoogleAdsPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupGoogleAds', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentGoogleAdsNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentGoogleAdsIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentGoogleAdsCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentGoogleAdsDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentGoogleAdsProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentGoogleAdsLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentGoogleAdsPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupGoogleAds', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentGoogleAdsNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentGoogleAdsIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentGoogleAdsCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showFacebook') === 'true') {
+        if ($config->get('ODTracking.showFacebook') === 'true') {
             $consentRepository->registerConsent(
                 'gtmFacebook',
-                'Tracking::CookieConsent.consentFacebookLabel',
+                'ODTracking::CookieConsent.consentFacebookLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentFacebookDescription',
-                    'provider' => 'Tracking::CookieConsent.consentFacebookProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentFacebookLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentFacebookPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupFacebook', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentFacebookNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentFacebookIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentFacebookCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentFacebookDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentFacebookProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentFacebookLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentFacebookPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupFacebook', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentFacebookNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentFacebookIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentFacebookCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showPinterest') === 'true') {
+        if ($config->get('ODTracking.showPinterest') === 'true') {
             $consentRepository->registerConsent(
                 'gtmPinterest',
-                'Tracking::CookieConsent.consentPinterestLabel',
+                'ODTracking::CookieConsent.consentPinterestLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentPinterestDescription',
-                    'provider' => 'Tracking::CookieConsent.consentPinterestProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentPinterestLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentPinterestPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupPinterest', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentPinterestNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentPinterestIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentPinterestCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentPinterestDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentPinterestProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentPinterestLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentPinterestPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupPinterest', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentPinterestNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentPinterestIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentPinterestCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showBilligerDe') === 'true') {
+        if ($config->get('ODTracking.showBilligerDe') === 'true') {
             $consentRepository->registerConsent(
                 'gtmBilligerDe',
-                'Tracking::CookieConsent.consentBilligerDeLabel',
+                'ODTracking::CookieConsent.consentBilligerDeLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentBilligerDeDescription',
-                    'provider' => 'Tracking::CookieConsent.consentBilligerDeProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentBilligerDeLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentBilligerDePolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupBilligerDe', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentBilligerDeNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentBilligerDeIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentBilligerDeCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentBilligerDeDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentBilligerDeProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentBilligerDeLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentBilligerDePolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupBilligerDe', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentBilligerDeNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentBilligerDeIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentBilligerDeCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showKelkoo') === 'true') {
+        if ($config->get('ODTracking.showKelkoo') === 'true') {
             $consentRepository->registerConsent(
                 'gtmKelkoo',
-                'Tracking::CookieConsent.consentKelkooLabel',
+                'ODTracking::CookieConsent.consentKelkooLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentKelkooDescription',
-                    'provider' => 'Tracking::CookieConsent.consentKelkooProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentKelkooLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentKelkooPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupKelkoo', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentKelkooNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentKelkooIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentKelkooCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentKelkooDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentKelkooProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentKelkooLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentKelkooPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupKelkoo', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentKelkooNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentKelkooIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentKelkooCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showPaypal') === 'true') {
+        if ($config->get('ODTracking.showPaypal') === 'true') {
             $consentRepository->registerConsent(
                 'gtmPaypal',
-                'Tracking::CookieConsent.consentPaypalLabel',
+                'ODTracking::CookieConsent.consentPaypalLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentPaypalDescription',
-                    'provider' => 'Tracking::CookieConsent.consentPaypalProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentPaypalLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentPaypalPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupPaypal', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentPaypalNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentPaypalIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentPaypalCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentPaypalDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentPaypalProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentPaypalLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentPaypalPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupPaypal', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentPaypalNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentPaypalIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentPaypalCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showAwin') === 'true') {
+        if ($config->get('ODTracking.showAwin') === 'true') {
             $consentRepository->registerConsent(
                 'gtmAwin',
-                'Tracking::CookieConsent.consentAwinLabel',
+                'ODTracking::CookieConsent.consentAwinLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentAwinDescription',
-                    'provider' => 'Tracking::CookieConsent.consentAwinProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentAwinLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentAwinPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupAwin', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentAwinNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentAwinIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentAwinCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentAwinDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentAwinProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentAwinLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentAwinPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupAwin', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentAwinNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentAwinIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentAwinCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showWebgains') === 'true') {
+        if ($config->get('ODTracking.showWebgains') === 'true') {
             $consentRepository->registerConsent(
                 'gtmWebgains',
-                'Tracking::CookieConsent.consentWebgainsLabel',
+                'ODTracking::CookieConsent.consentWebgainsLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentWebgainsDescription',
-                    'provider' => 'Tracking::CookieConsent.consentWebgainsProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentWebgainsLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentWebgainsPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupWebgains', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentWebgainsNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentWebgainsIsOptOut') === 'true',
-                    'cookieNames' => array_map('trim', explode(',', $config->get('Tracking.consentWebgainsCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentWebgainsDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentWebgainsProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentWebgainsLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentWebgainsPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupWebgains', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentWebgainsNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentWebgainsIsOptOut') === 'true',
+                    'cookieNames' => array_map('trim', explode(',', $config->get('ODTracking.consentWebgainsCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieOne') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieOne') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieOne',
-                'Tracking::CookieConsent.consentCustomCookieOneLabel',
+                'ODTracking::CookieConsent.consentCustomCookieOneLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieOneDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieOneProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieOneLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieOnePolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieOne', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieOneNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieOneIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieOneCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieOneDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieOneProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieOneLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieOnePolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieOne', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieOneNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieOneIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieOneCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieTwo') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieTwo') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieTwo',
-                'Tracking::CookieConsent.consentCustomCookieTwoLabel',
+                'ODTracking::CookieConsent.consentCustomCookieTwoLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieTwoDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieTwoProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieTwoLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieTwoPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieTwo', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieTwoNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieTwoIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieTwoCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieTwoDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieTwoProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieTwoLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieTwoPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieTwo', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieTwoNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieTwoIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieTwoCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieThree') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieThree') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieThree',
-                'Tracking::CookieConsent.consentCustomCookieThreeLabel',
+                'ODTracking::CookieConsent.consentCustomCookieThreeLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieThreeDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieThreeProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieThreeLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieThreePolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieThree', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieThreeNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieThreeIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieThreeCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieThreeDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieThreeProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieThreeLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieThreePolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieThree', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieThreeNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieThreeIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieThreeCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieFour') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieFour') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieFour',
-                'Tracking::CookieConsent.consentCustomCookieFourLabel',
+                'ODTracking::CookieConsent.consentCustomCookieFourLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieFourDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieFourProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieFourLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieFourPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieFour', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieFourNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieFourIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieFourCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieFourDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieFourProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieFourLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieFourPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieFour', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieFourNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieFourIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieFourCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieFive') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieFive') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieFive',
-                'Tracking::CookieConsent.consentCustomCookieFiveLabel',
+                'ODTracking::CookieConsent.consentCustomCookieFiveLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieFiveDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieFiveProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieFiveLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieFivePolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieFive', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieFiveNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieFiveIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieFiveCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieFiveDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieFiveProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieFiveLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieFivePolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieFive', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieFiveNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieFiveIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieFiveCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieSix') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieSix') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieSix',
-                'Tracking::CookieConsent.consentCustomCookieSixLabel',
+                'ODTracking::CookieConsent.consentCustomCookieSixLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieSixDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieSixProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieSixLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieSixPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieSix', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieSixNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieSixIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieSixCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieSixDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieSixProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieSixLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieSixPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieSix', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieSixNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieSixIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieSixCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieSeven') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieSeven') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieSeven',
-                'Tracking::CookieConsent.consentCustomCookieSevenLabel',
+                'ODTracking::CookieConsent.consentCustomCookieSevenLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieSevenDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieSevenProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieSevenLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieSevenPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieSeven', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieSevenNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieSevenIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieSevenCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieSevenDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieSevenProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieSevenLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieSevenPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieSeven', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieSevenNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieSevenIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieSevenCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieEight') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieEight') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieEight',
-                'Tracking::CookieConsent.consentCustomCookieEightLabel',
+                'ODTracking::CookieConsent.consentCustomCookieEightLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieEightDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieEightProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieEightLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieEightPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieEight', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieEightNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieEightIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieEightCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieEightDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieEightProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieEightLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieEightPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieEight', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieEightNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieEightIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieEightCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieNine') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieNine') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieNine',
-                'Tracking::CookieConsent.consentCustomCookieNineLabel',
+                'ODTracking::CookieConsent.consentCustomCookieNineLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieNineDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieNineProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieNineLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieNinePolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieNine', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieNineNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieNineIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieNineCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieNineDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieNineProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieNineLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieNinePolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieNine', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieNineNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieNineIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieNineCookieNames')))
                 ]
             );
         }
 
-        if ($config->get('Tracking.showCustomCookieTen') === 'true') {
+        if ($config->get('ODTracking.showCustomCookieTen') === 'true') {
             $consentRepository->registerConsent(
                 'gtmCustomCookieTen',
-                'Tracking::CookieConsent.consentCustomCookieTenLabel',
+                'ODTracking::CookieConsent.consentCustomCookieTenLabel',
                 [
-                    'description' => 'Tracking::CookieConsent.consentCustomCookieTenDescription',
-                    'provider' => 'Tracking::CookieConsent.consentCustomCookieTenProvider',
-                    'lifespan' => 'Tracking::CookieConsent.consentCustomCookieTenLifespan',
-                    'policyUrl' => 'Tracking::CookieConsent.consentCustomCookieTenPolicyUrl',
-                    'group' => $config->get('Tracking.consentGroupCustomCookieTen', 'tracking'),
-                    'necessary' => $config->get('Tracking.consentCustomCookieTenNecessary') === 'true',
-                    'isOptOut' => $config->get('Tracking.consentCustomCookieTenIsOptOut') === 'true',
-                    'cookieNames' =>  array_map('trim', explode(',', $config->get('Tracking.consentCustomCookieTenCookieNames')))
+                    'description' => 'ODTracking::CookieConsent.consentCustomCookieTenDescription',
+                    'provider' => 'ODTracking::CookieConsent.consentCustomCookieTenProvider',
+                    'lifespan' => 'ODTracking::CookieConsent.consentCustomCookieTenLifespan',
+                    'policyUrl' => 'ODTracking::CookieConsent.consentCustomCookieTenPolicyUrl',
+                    'group' => $config->get('ODTracking.consentGroupCustomCookieTen', 'tracking'),
+                    'necessary' => $config->get('ODTracking.consentCustomCookieTenNecessary') === 'true',
+                    'isOptOut' => $config->get('ODTracking.consentCustomCookieTenIsOptOut') === 'true',
+                    'cookieNames' =>  array_map('trim', explode(',', $config->get('ODTracking.consentCustomCookieTenCookieNames')))
                 ]
             );
         }

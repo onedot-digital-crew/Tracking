@@ -4,7 +4,7 @@
         "de": "Google Tag Manager Tracking ENTERPRISE Forked",
         "en": "Google Tag Manager Tracking ENTERPRISE Forked"
     },
-    "namespace": "Tracking",
+    "namespace": "ODTracking",
     "isClosedSource": false,
     "version": "5.0.4",
     "license": "AGPL-3.0",
@@ -58,28 +58,28 @@
         "IO": ">=4.6.0",
         "Ceres": ">=4.6.0"
     },
-    "serviceProvider": "Tracking\\Providers\\TrackingServiceProvider",
+    "serviceProvider": "ODTracking\\Providers\\TrackingServiceProvider",
     "dataProviders": [
         {
-            "key": "Tracking\\Providers\\GtmProviderHead",
+            "key": "ODTracking\\Providers\\GtmProviderHead",
             "name": "Google Tag Manager Code (Page Head)",
             "description": "Add Google Tag Manager Code in Page Head",
             "defaultLayoutContainer": "Ceres::Template.Style"
         },
         {
-            "key": "Tracking\\Providers\\GoogleSiteVerification",
+            "key": "ODTracking\\Providers\\GoogleSiteVerification",
             "name": "Google Site Verification Meta-Tag (Page Head)",
             "description": "Add the meta-tag for Google Site Verification in Page Head",
             "defaultLayoutContainer": "Ceres::Template.Style"
         },
         {
-            "key": "Tracking\\Providers\\TrackingCodeProvider",
+            "key": "ODTracking\\Providers\\TrackingCodeProvider",
             "name": "Tracking code",
             "description": "Include tracking code",
             "defaultLayoutContainer": "Ceres::Script.AfterScriptsLoaded"
         },
         {
-            "key": "Tracking\\Providers\\GtmProviderBody",
+            "key": "ODTracking\\Providers\\GtmProviderBody",
             "name": "Google Tag Manager Code (Page Body)",
             "description": "Add Google Tag Manager Code in Page Body",
             "defaultLayoutContainer": "Ceres::PageDesign.AfterOpeningBodyTag"

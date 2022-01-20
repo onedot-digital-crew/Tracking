@@ -8,6 +8,6 @@ class GtmProviderBody
 {
     public function call(Twig $twig)
     {
-        return $twig->render('Tracking::GtmBody');
+        return $twig->render('ODTracking::GtmBody');
     }
 }

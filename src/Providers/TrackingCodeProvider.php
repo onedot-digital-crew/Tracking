@@ -20,7 +20,7 @@ class TrackingCodeProvider
 //        $templateForTracking = self::getTemplateForTracking();
 
         return $twig->render(
-            'Tracking::TrackingCode',
+            'ODTracking::TrackingCode',
             [
                 'trackOrder' => $enableTracking,
 //                'templateForTracking' => $templateForTracking
