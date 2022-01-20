@@ -1,6 +1,6 @@
 <?php
 
-namespace Tracking\Providers;
+namespace ODTracking\Providers;
 
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\Templates\Twig;

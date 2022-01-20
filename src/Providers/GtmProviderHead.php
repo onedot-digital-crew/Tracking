@@ -1,6 +1,6 @@
 <?php
 
-namespace Tracking\Providers;
+namespace ODTracking\Providers;
 
 use Plenty\Plugin\Templates\Twig;
 

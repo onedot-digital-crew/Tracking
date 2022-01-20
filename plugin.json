@@ -58,28 +58,28 @@
         "IO": ">=4.6.0",
         "Ceres": ">=4.6.0"
     },
-    "serviceProvider": "ODTracking\\Providers\\TrackingServiceProvider",
+    "serviceProvider": "ODODTracking\\Providers\\TrackingServiceProvider",
     "dataProviders": [
         {
-            "key": "ODTracking\\Providers\\GtmProviderHead",
+            "key": "ODODTracking\\Providers\\GtmProviderHead",
             "name": "Google Tag Manager Code (Page Head)",
             "description": "Add Google Tag Manager Code in Page Head",
             "defaultLayoutContainer": "Ceres::Template.Style"
         },
         {
-            "key": "ODTracking\\Providers\\GoogleSiteVerification",
+            "key": "ODODTracking\\Providers\\GoogleSiteVerification",
             "name": "Google Site Verification Meta-Tag (Page Head)",
             "description": "Add the meta-tag for Google Site Verification in Page Head",
             "defaultLayoutContainer": "Ceres::Template.Style"
         },
         {
-            "key": "ODTracking\\Providers\\TrackingCodeProvider",
+            "key": "ODODTracking\\Providers\\TrackingCodeProvider",
             "name": "Tracking code",
             "description": "Include tracking code",
             "defaultLayoutContainer": "Ceres::Script.AfterScriptsLoaded"
         },
         {
-            "key": "ODTracking\\Providers\\GtmProviderBody",
+            "key": "ODODTracking\\Providers\\GtmProviderBody",
             "name": "Google Tag Manager Code (Page Body)",
             "description": "Add Google Tag Manager Code in Page Body",
             "defaultLayoutContainer": "Ceres::PageDesign.AfterOpeningBodyTag"
